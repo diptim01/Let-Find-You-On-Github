@@ -3,7 +3,7 @@ import GithubContext from "../../context/github/GithubContext";
 
 function UserSearch() {
   const [text, setText] = useState("");
-  const { users, searchhUsers } = useContext(GithubContext);
+  const { users, searchhUsers, clearUsers } = useContext(GithubContext);
 
   const handleChange = (e) => setText(e.target.value);
   const handleSumbit = (e) => {
@@ -43,7 +43,9 @@ function UserSearch() {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg">Clear</button>
+          <button onClick={clearUsers} className="btn btn-ghost btn-lg">
+            Clear
+          </button>
         </div>
       )}
     </div>
