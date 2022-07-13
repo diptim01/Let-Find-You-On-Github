@@ -3,7 +3,7 @@ import GithubContext from "../../context/github/GithubContext";
 
 function UserSearch() {
   const [text, setText] = useState("");
-  const { users } = useContext(GithubContext);
+  const { users, searchhUsers } = useContext(GithubContext);
 
   const handleChange = (e) => setText(e.target.value);
   const handleSumbit = (e) => {
@@ -12,9 +12,9 @@ function UserSearch() {
     if (text === "") {
       alert("Please enter something");
     } else {
+      searchhUsers(text);
+      setText("");
     }
-
-    setText("");
   };
 
   return (
