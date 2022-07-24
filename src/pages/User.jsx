@@ -56,7 +56,7 @@ function User() {
       <div className="w-full mx-auto lg:w-10/12">
         <div className="mb-4">
           <Link to="/" className="btn btn-ghost">
-            Back to Search
+            Back To Search
           </Link>
         </div>
 
@@ -72,6 +72,7 @@ function User() {
               </div>
             </div>
           </div>
+
           <div className="col-span-2">
             <div className="mb-6">
               <h1 className="text-3xl card-title">
@@ -93,7 +94,8 @@ function User() {
                 </a>
               </div>
             </div>
-            <div className="w-ful rounded-lg shadow-md bg-base-100 stats">
+
+            <div className="w-full rounded-lg shadow-md bg-base-100 stats">
               {location && (
                 <div className="stat">
                   <div className="stat-title text-md">Location</div>
@@ -104,12 +106,8 @@ function User() {
                 <div className="stat">
                   <div className="stat-title text-md">Website</div>
                   <div className="text-lg stat-value">
-                    <a
-                      href={`https://${blog}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {blog}
+                    <a href={websiteUrl} target="_blank" rel="noreferrer">
+                      {websiteUrl}
                     </a>
                   </div>
                 </div>
@@ -131,11 +129,12 @@ function User() {
             </div>
           </div>
         </div>
+
         <div className="w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats">
           <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaUsers className="text-3xl md:text-5xl" />
+                <FaUsers className="text-3xl md:text-5xl mt-4" />
               </div>
               <div className="stat-title pr-5">Followers</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -145,7 +144,7 @@ function User() {
 
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaUserFriends className="text-3xl md:text-5xl" />
+                <FaUserFriends className="text-3xl md:text-5xl mt-5" />
               </div>
               <div className="stat-title pr-5">Following</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -155,7 +154,7 @@ function User() {
 
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaCodepen className="text-3xl md:text-5xl" />
+                <FaCodepen className="text-3xl md:text-5xl mt-5" />
               </div>
               <div className="stat-title pr-5">Public Repos</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -165,17 +164,16 @@ function User() {
 
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaLaptopCode className="text-3xl md:text-5xl" />
+                <FaLaptopCode className="text-3xl md:text-5xl mt-5" />
               </div>
               <div className="stat-title pr-5">Private Repos</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
                 {total_private_repos == null ? 0 : total_private_repos}
               </div>
             </div>
-
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaStore className="text-3xl md:text-5xl" />
+                <FaStore className="text-3xl md:text-5xl mt-5" />
               </div>
               <div className="stat-title pr-5">Public Gists</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -184,6 +182,7 @@ function User() {
             </div>
           </div>
         </div>
+
         <RepoList repos={repos} />
       </div>
     </>
