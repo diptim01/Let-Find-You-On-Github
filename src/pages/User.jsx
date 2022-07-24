@@ -36,6 +36,9 @@ function User() {
   if (loading) {
     return <Spinner />;
   }
+
+  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
+  
   return (
     <>
       <div className="w-full mx-auto lg:w-10/12">
