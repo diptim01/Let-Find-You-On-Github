@@ -1,4 +1,4 @@
-import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
+import { FaCodepen, FaStore, FaUserFriends, FaUsers, FaLaptopCode } from "react-icons/fa";
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../components/layout/Spinner";
@@ -28,6 +28,7 @@ function User() {
     public_repos,
     public_gists,
     hireable,
+    total_private_repos,
   } = user;
 
   if (loading) {
@@ -146,6 +147,16 @@ function User() {
 
           <div className="stat">
             <div className="stat-figure text-secondary">
+              <FaLaptopCode className="text-3xl md:text-5xl" />
+            </div>
+            <div className="stat-title pr-5">Private Repos</div>
+            <div className="stat-value pr-5 text-3xl md:text-4xl">
+              {total_private_repos == null ? 0 : total_private_repos}
+            </div>
+          </div>
+
+          <div className="stat">
+            <div className="stat-figure text-secondary">
               <FaStore className="text-3xl md:text-5xl" />
             </div>
             <div className="stat-title pr-5">Public Gists</div>
@@ -153,6 +164,7 @@ function User() {
               {public_gists}
             </div>
           </div>
+
         </div>
       </div>
     </>
