@@ -12,7 +12,7 @@ function UserSearch() {
   const handleSumbit = async (e) => {
     e.preventDefault();
 
-    if (text === "") {
+    if (text === "" || text.trim() === "") {
       setAlert("Please enter something", "error");
     } else {
       dispatch({ type: "SET_LOADING" });
